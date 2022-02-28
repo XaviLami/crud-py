@@ -1,0 +1,7 @@
+ 
+    {% for data in dataset %}
+     <ul>
+         <li><a href={{data.id}}>{{ data.text }}</a><br/>
+         {{ data.date }}<br/></li>
+    </ul>
+    {% endfor %}
