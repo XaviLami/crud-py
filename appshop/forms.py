@@ -9,9 +9,7 @@ class ProductForm(forms.ModelForm):
     class Meta:
         # specify model to be used
         model = Product
+        fields="__all__"
  
         # specify fields to be used
-        fields = [
-            "name",
-            "price",
-        ]
+       

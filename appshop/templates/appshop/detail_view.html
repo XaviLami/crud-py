@@ -1,0 +1,13 @@
+Name: {{data.name}} <br />
+Price : {{data.price}} <br />
+Quantity :{{data.quantity}}<br />
+{%if data.quantity == 0%}
+<strong>Stock unavailable</strong> <br />
+{%endif%} {%if data.picture.url%}
+<img width="900" alt="{{data.name}}" src="{{data.picture.url}}" />
+{%endif%}
+<div>
+  <a href="/appshop/update/{{data.id}}">Update</a>
+  <a href="/appshop/{{data.id}}/delete">Delete</a>
+  <a href="/appshop/">Home</a>
+</div>

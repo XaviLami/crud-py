@@ -1,1 +1,16 @@
-<h1 class="title">Bienvenue sur ma boutique en ligne ! </h1>
+<h1 class="title">Welcome to my online store !</h1>
+
+<h2>You will find below our products :</h2>
+{% for data in dataset %}
+<ul>
+  <li>
+    <a href="{{data.id}}"
+      >{{ data.name }}<br />
+      <img width="150" src="{{data.picture.url}}" /></a
+    ><br />
+    {%if data.quantity == 0%}
+    <strong>Stock unavailable</strong> <br />
+    {%endif%}
+  </li>
+</ul>
+{% endfor %}
