@@ -1,16 +1,19 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" />
 <h1 class="title">Welcome to my online store !</h1>
 
 <h2>You will find below our products :</h2>
-{% for data in dataset %}
-<ul>
-  <li>
-    <a href="{{data.id}}"
-      >{{ data.name }}<br />
-      <img width="150" src="{{data.picture.url}}" /></a
-    ><br />
-    {%if data.quantity == 0%}
-    <strong>Stock unavailable</strong> <br />
-    {%endif%}
-  </li>
-</ul>
+{% for data in dataset %} {%if data.quantity == 0%}
+<strong>Stock unavailable</strong> <br />
+{%endif%}
+<a href="{{data.id}}">
+  <div class="card">
+    <ul>
+      <li>
+        {{ data.name }}<br />
+        <img width="150" src="{{data.picture.url}}" /><br />
+      </li>
+    </ul>
+  </div>
+</a>
 {% endfor %}
